@@ -9,7 +9,7 @@ void sNew(stack *s, int elemSize, void (*freefn)(void *))
 	assert(s->elemSize > 0);
 	s->elemSize = elemSize;
 	s->logicalLength = 0;
-	s->alocatedLength = 8;
+	s->allocatedLength = 8;
 	s->elems = malloc(8 * elemSize);
 	assert(s->elems != NULL);
 }
@@ -49,5 +49,5 @@ void sPop(stack *s, void *elemAddress)
 static void sGrow(stack *s)
 {
 	s->allocatedLength *= 2;
-	s->elems = realloc(s->elems, s->alocatedLength * s->elemSize);
+	s->elems = realloc(s->elems, s->allocatedLength * s->elemSize);
 }
