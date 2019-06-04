@@ -41,7 +41,7 @@ void sPush(stack *s, void *elemAddress)
 void sPop(stack *s, void *elemAddress)
 {
 	s->logicalLength--;
-	void *sorce = (char*)s->elems + s->logicalLength * s->elemSize;
+	void *source = (char*)s->elems + s->logicalLength * s->elemSize;
 	memcpy(elemAddress, source, s->elemSize);
 }
 
